@@ -1,32 +1,18 @@
-// 🌙 Dark Mode Toggle
-const themeButton = document.getElementById('themeToggle');
-const body = document.body;
 
-themeButton.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-
-  if (body.classList.contains('dark-mode')) {
-    themeButton.textContent = '☀️ Light Mode';
-  } else {
-    themeButton.textContent = '🌙 Dark Mode';
-  }
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+    this.reset();
 });
 
-// 💌 Contact Form Function
-const form = document.getElementById('contactForm');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+const toggleButton = document.getElementById('theme-toggle');
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  if (name && email && message) {
-    alert(`Thank you, ${name}! 💖\nYour message has been sent successfully.`);
-    form.reset();
-  } else {
-    alert("Please fill all fields before submitting.");
-  }
+    if(document.body.classList.contains('dark-mode')){
+        toggleButton.textContent = '☀️';
+    } else {
+        toggleButton.textContent = '🌙';
+    }
 });
-
